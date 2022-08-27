@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Heading from './Heading';
+import List from './List';
+//import youtube,{favprog,myname} from './impexpuse';
+import * as ques from './impexpuse' // to import all objects from the impexpuse file but not recommended
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+    return (
+        <>
+            <Heading/>
+            <List/>
+            {ques.default}<br/>
+            {ques.favprog}<br/>
+            {ques.myname()}<br/>
+            {ques.mynames()}
+        </>
+    )
 }
 
-export default App;
+export default App

@@ -4,20 +4,26 @@ import List from './List';
 //import youtube,{favprog,myname} from './impexpuse';
 import * as ques from './impexpuse' // to import all objects from the impexpuse file but not recommended
 import Add,{Sub,Mul} from './calc';
-import Greeting from './greeting';
+//import Greeting from './greeting';
 import UserGreeting from './UserGreeting';
 import GuestGreeting from './GuestGreeting';
+const loggegIn = false;
 
-const App = () => {
-    const loggegIn = false;
-    
+/* conditional rendering */
+/*const Greeting =() =>{
     if(loggegIn === true){
         return <UserGreeting/>
     }
     else{
-        return <>
-            <GuestGreeting/>
-            <Greeting/>
+        return <GuestGreeting/>
+    }
+}
+*/
+const App = () => {
+    return(
+        <>
+            {/*<Greeting/>*/}
+            {loggegIn === true ? <UserGreeting/> : <GuestGreeting/>}
             <Heading/>
             <List/>
             {ques.default}<br/>
@@ -26,10 +32,9 @@ const App = () => {
             {ques.mynames()}<br/>
             {`Sum of the two numbers is ${Add(14,10)}`}<br/>
             {`Subtraction of the numbers is ${Sub(20,10)}`}<br/>
-            {`Multiplication of the numbers is ${Mul(2,10)}`}<br/>
-        </> 
-    }         
-    
-}
+            {`Multiplication of the numbers is ${Mul(2,10)}`}
+        </>
+    )
+}         
 
 export default App

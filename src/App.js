@@ -5,10 +5,18 @@ import List from './List';
 import * as ques from './impexpuse' // to import all objects from the impexpuse file but not recommended
 import Add,{Sub,Mul} from './calc';
 import Greeting from './greeting';
+import UserGreeting from './UserGreeting';
+import GuestGreeting from './GuestGreeting';
 
 const App = () => {
-    return (
-        <>
+    const loggegIn = false;
+    
+    if(loggegIn === true){
+        return <UserGreeting/>
+    }
+    else{
+        return <>
+            <GuestGreeting/>
             <Greeting/>
             <Heading/>
             <List/>
@@ -18,9 +26,10 @@ const App = () => {
             {ques.mynames()}<br/>
             {`Sum of the two numbers is ${Add(14,10)}`}<br/>
             {`Subtraction of the numbers is ${Sub(20,10)}`}<br/>
-            {`Multiplication of the numbers is ${Mul(2,10)}`}
-        </>
-    )
+            {`Multiplication of the numbers is ${Mul(2,10)}`}<br/>
+        </> 
+    }         
+    
 }
 
 export default App
